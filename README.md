@@ -17,7 +17,3 @@ MENTER: NEELA SANTOSH
 ##Output
 
 <img width="567" height="153" alt="Image" src="https://github.com/user-attachments/assets/a1c61ed3-5d66-409d-98bd-b8654b125e81" />
-
-
-
-<img width="575" height="168" alt="Image" src="https://github.com/user-attachments/assets/cdd3fe18-3e98-40b4-a6ff-d8a6da936b08" />
