@@ -1,0 +1,69 @@
+-- =========================
+-- MYSQL SIDE (SOURCE)
+-- =========================
+
+CREATE DATABASE company_db;
+USE company_db;
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    salary INT
+);
+
+INSERT INTO employees (name, department, salary) VALUES
+('Lakshmi', 'HR', 30000),
+('Ravi', 'IT', 40000),
+('Anjali', 'Finance', 35000),
+('Kiran', 'Marketing', 28000);
+
+SELECT * FROM employees;
+
+-- =========================
+-- EXPORT COMMAND (RUN IN TERMINAL)
+-- =========================
+-- mysqldump -u root -p company_db > company_db.sql
+
+
+-- =========================
+-- POSTGRESQL SIDE (TARGET)
+-- =========================
+
+-- CREATE DATABASE (run separately)
+-- CREATE DATABASE company_db;
+
+-- CONNECT COMMAND (terminal)
+-- psql -U postgres -d company_db
+
+-- =========================
+-- MIGRATION SCRIPT (POSTGRESQL COMPATIBLE)
+-- =========================
+
+CREATE TABLE employees (
+    emp_id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    salary INT
+);
+
+INSERT INTO employees (emp_id, name, department, salary) VALUES
+(1, 'Lakshmi', 'HR', 30000),
+(2, 'Ravi', 'IT', 40000),
+(3, 'Anjali', 'Finance', 35000),
+(4, 'Kiran', 'Marketing', 28000);
+
+-- =========================
+-- DATA VERIFICATION
+-- =========================
+
+SELECT * FROM employees;
+
+SELECT COUNT(*) FROM employees;
+
+SELECT emp_id, COUNT(*) 
+FROM employees 
+GROUP BY emp_id 
+HAVING COUNT(*) > 1;
+
+SELECT * FROM employees WHERE name IS NULL;
